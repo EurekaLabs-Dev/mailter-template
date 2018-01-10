@@ -9,11 +9,11 @@ module.exports = async (request, response) => {
     })
   }
   try {
-    const html = await createMailHtml(identifier, params.content)
-    const options = createOptions(identifier, to, html, params.subject)
+    const html = await createMailHtml(identifier, params)
+    const options = createOptions(identifier, to, html, params)
     const info = await sendMail(options)
     response.end(`Message sent ${identifier} ${info.messageId}`)
   } catch (e) {
-    response.end(e.message)
+    response.status(400).end(e.message)
   }
 }

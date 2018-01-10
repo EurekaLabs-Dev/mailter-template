@@ -14,7 +14,7 @@ const getConfig = () => {
 const getResource = identifier => {
   const resource = resources[identifier]
   if (!resource) {
-    return { error: `Resource not found for identifier ${identifier}` }
+    throw Error(`Resource not found for identifier ${identifier}`)
   }
   return resource
 }
@@ -22,8 +22,6 @@ const getResource = identifier => {
 const createOptions = (identifier, to, html, subjectParams = {}) => {
   const config = getConfig()
   const resource = getResource(identifier)
-  if (resource.error) return resource
-
   return {
     error: false,
     from: config.from,
@@ -35,7 +33,6 @@ const createOptions = (identifier, to, html, subjectParams = {}) => {
 
 const createMailHtml = (identifier, content) => {
   const resource = getResource(identifier)
-  if (resource.error) return resource
   const templatePath = path.join(__dirname, 'templates', resource.template + '.jade')
   return new Promise((resolve, reject) => {
     jade.renderFile(templatePath, content, (err, data) => {
@@ -49,7 +46,6 @@ const createMailHtml = (identifier, content) => {
 
 const sendMail = options => {
   const config = getConfig()
-  console.log(config)
   const transporter = nodemailer.createTransport({
     host: config.host,
     port: config.port,
