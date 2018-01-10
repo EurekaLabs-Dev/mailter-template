@@ -1,0 +1,6 @@
+{
+  "welcome": {
+    "subject": "Welcome {name} to the system ",
+    "template": "welcome"
+  }
+}

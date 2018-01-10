@@ -1,0 +1,8 @@
+{
+  "from": "yoopay.dev@gmail.com",
+  "host": "smtp.gmail.com",
+  "port": 587,
+  "secure": false,
+  "user": "yoopay.dev@gmail.com",
+  "password": "yoopay2016"
+}
