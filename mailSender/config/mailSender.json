@@ -1,8 +1,0 @@
-{
-  "from": "youremail@gmail.com",
-  "host": "smtp.gmail.com",
-  "port": 587,
-  "secure": false,
-  "user": "youremail@gmail.com",
-  "password": "pass"
-}
