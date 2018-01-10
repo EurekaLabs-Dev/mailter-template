@@ -1,2 +1,2 @@
 # mailter-template
-A simple mailer that user jade template and nodemailer to send emails
+A simple mailer that user jade template and nodemailer to send emails using rest endpoints
