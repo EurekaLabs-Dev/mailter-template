@@ -1,6 +1,6 @@
 {
   "welcome": {
-    "subject": "Welcome {name} to the system ",
+    "subject": "Olá {nome}, estes são seus dados de acesso ao sistema Yoopay ",
     "template": "welcome"
   }
 }

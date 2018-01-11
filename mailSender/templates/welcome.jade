@@ -1,2 +1,13 @@
-h1 Bem vim a Matrix
-h2 Olá #{name}, esse sistemas é para você
+extends layout
+
+block content
+    p Olá
+        b &nbsp;#{nome}
+        | &nbsp;agora você também é um yoo, seja bem vindo a nossa família!
+    p
+        a(href='#{link}') Clique aqui para acessar o sistema
+        | &nbsp;ou copie o link abaixo e cole no seu navegador:
+    span
+        b #{link}    
+    br
+    p Até Breve.

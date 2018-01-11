@@ -1,8 +1,9 @@
 const nodemailer = require('nodemailer')
 const stringTemplate = require('string-template')
-const resources = require('./config/resources.json')
 const jade = require('jade')
-var path = require('path');
+const path = require('path')
+const inlineBase64 = require('nodemailer-plugin-inline-base64')
+
 
 const getConfig = () => {
   if (!process.env.NODE_ENV) {
@@ -12,6 +13,9 @@ const getConfig = () => {
 }
 
 const getResource = identifier => {
+  const name = require.resolve('./config/resources.json')
+  delete require.cache[name]
+  const resources = require('./config/resources.json')
   const resource = resources[identifier]
   if (!resource) {
     throw Error(`Resource not found for identifier ${identifier}`)
@@ -55,7 +59,7 @@ const sendMail = options => {
       pass: config.password
     }
   })
-
+  transporter.use('compile', inlineBase64())
   return new Promise((resolve, reject) => {
     transporter.sendMail(options, (error, info) => {
       if (error) {
