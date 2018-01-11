@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 const mailSender = require('./mailSender');
 
-const context = '/api/yoo-mailer'
+const context = '/api/mailer'
 
 var app = express();
 
