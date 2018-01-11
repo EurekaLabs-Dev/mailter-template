@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    p Olá
+        b &nbsp;#{nome}
+        | &nbsp;você solicitou a alteração de sua senha!
+    p
+        a(href='#{link}') Clique aqui para alterar sua senha
+        | &nbsp;ou copie o link abaixo e cole no seu navegador:
+    span
+        b #{link}    

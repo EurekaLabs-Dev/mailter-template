@@ -2,5 +2,9 @@
   "welcome": {
     "subject": "Olá {nome}, estes são seus dados de acesso ao sistema Yoopay ",
     "template": "welcome"
+  },
+  "pwd-reset": {
+    "subject": "Olá {nome}, você solicitou a alteração de senha",
+    "template": "pwd-reset"
   }
 }
